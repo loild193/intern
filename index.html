@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/sidebar.css" />
+  <link rel="stylesheet" href="styles/calendar.css" />
+  <link rel="stylesheet" href="styles/modal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <script type="text/javascript" src="./script/table.js"></script>
+  <title>HW1</title>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar__header">
+        <h3>task manager</h3>
+      </div>
+  
+      <div class="sidebar__information">
+        <div class="information__avatar">
+          <img src="./images/avatar.jpg" alt="avatar" />
+        </div>
+  
+        <h4 class="information__name">Natalie Smith</h4>
+        <p class="information__email">nataliesmith@gmail.com</p>
+  
+        <div class="information__utils">
+          <div class="utils__icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="utils__icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="utils__icon">
+            <i class="fas fa-bell"></i>
+          </div>
+        </div>
+      </div>
+  
+      <div class="sidebar__timeline">
+        <div class="timeline__line"></div>
+        <div class="timeline__detail">
+          <div class="detail__task">
+            <h4>12</h4>
+            <p>completed tasks</p>
+          </div>
+          <div class="detail__task">
+            <h4>12</h4>
+            <p>completed tasks</p>
+          </div>
+          <div class="detail__task">
+            <h4>12</h4>
+            <p>completed tasks</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="sidebar__project">
+        <h3 class="project__header">projects</h3>
+        <div class="project__detail">
+          <i class="far fa-circle"></i>
+          <span class="project__name">marketing</span>
+        </div>
+        <div class="project__detail">
+          <i class="far fa-circle"></i>
+          <span class="project__name">marketing</span>
+        </div>
+        <div class="project__detail">
+          <i class="far fa-circle"></i>
+          <span class="project__name">marketing</span>
+        </div>
+        <div class="project__detail">
+          <i class="far fa-circle"></i>
+          <span class="project__name">marketing</span>
+        </div>
+      </div>
+  
+      <div class="sidebar__team">
+        <h3 class="team__header">team</h3>
+        <img src="./images/avatar.jpg" alt="avatar" />
+        <img src="./images/avatar.jpg" alt="avatar" />
+        <img src="./images/avatar.jpg" alt="avatar" />
+        <img src="./images/avatar.jpg" alt="avatar" />
+        <img src="./images/avatar.jpg" alt="avatar" />
+      </div>
+    </div>
+
+    <div class="calendar">
+      <div class="calendar__header">
+        <div class="header__search">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <h3 class="header__title">Calendar</h3>
+        <div class="header__more">
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+      </div>
+      
+      <div class="calendar__container">
+        <div class="container__header">
+          <div class="header__left">
+            <a href="#" class="toogle--week active">Week</a>
+            <a href="#" class="toogle--month inactive">Month</a>
+          </div>
+          <div class="header__center">
+            <i class="fas fa-angle-left"></i>
+            <div class="center__info">
+              <h5>October</h5>
+              <p>2018</p>
+            </div>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="header__right">
+            <a href="#" id="toogle--weekend">Weekends</a>
+            <a href="#" id="add__task">Add task</a>
+          </div>
+        </div>
+
+        <div class="container__content">
+          <table id="calendar__table">
+            <tr id="row__one">
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th class="table__weekend">Saturday</th>
+              <th class="table__weekend">Sunday</th>
+            </tr>
+            <tr id="row__two">
+              <td>
+                <div class="task">
+                  <p class="content__day">31</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">1</p>
+                  <ul class="content__work" draggable="true" id="1">
+                    <i class="fas fa-times"></i>
+                    <li>Do HW</li>
+                    <li>Do HW</li>
+                    <div class="content__icon">
+                      <i class="fas fa-check-circle icon--inactive"></i>
+                    </div>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">17</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">3</p>
+                  <ul class="content__work" draggable="true" id="3">
+                    <i class="fas fa-times"></i>
+                    <li>Do HW</li>
+                    <li>Do HW</li>
+                    <div class="content__icon">
+                      <i class="fas fa-check-circle icon--inactive"></i>
+                    </div>
+                  </ul>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">4</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">5</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">6</p>
+                </div>
+              </td>
+            </tr>
+            <tr id="row__three">
+              <td>
+                <div class="task">
+                  <p class="content__day">7</p>
+                  <ul class="content__work" draggable="true" id="7">
+                    <i class="fas fa-times"></i>
+                    <li>Do HW</li>
+                    <li>Do HW</li>
+                    <div class="content__icon">
+                      <i class="fas fa-check-circle icon--inactive"></i>
+                    </div>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">8</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">9</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">10</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">11</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">12</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">13</p>
+                </div>
+              </td>
+            </tr>
+            <tr id="row__four">
+              <td>
+                <div class="task">
+                  <p class="content__day">14</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">15</p>
+                  <ul class="content__work" draggable="true" id="15">
+                    <i class="fas fa-times"></i>
+                    <li>Do HW</li>
+                    <li>Do HW</li>
+                    <div class="content__icon">
+                      <i class="fas fa-check-circle icon--inactive"></i>
+                    </div>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">16</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">17</p>
+                  <ul class="content__work" draggable="true" id="17">
+                    <i class="fas fa-times"></i>
+                    <li>Do HW</li>
+                    <li>Do HW</li>
+                    <div class="content__icon">
+                      <i class="fas fa-check-circle icon--inactive"></i>
+                    </div>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">18</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">19</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">20</p>
+                </div>
+              </td>
+            </tr>
+            <tr id="row__five">
+              <td>
+                <div class="task">
+                  <p class="content__day">21</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">22</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">23</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">24</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">25</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">26</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">27</p>
+                </div>
+              </td>
+            </tr>
+            <tr id="row__six">
+              <td>
+                <div class="task">
+                  <p class="content__day">28</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">29</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">30</p>
+                  <ul class="content__work" draggable="true" id="30">
+                    <i class="fas fa-times"></i>
+                    <li>Do HW</li>
+                    <li>Do HW</li>
+                    <div class="content__icon">
+                      <i class="fas fa-check-circle icon--inactive"></i>
+                    </div>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">1</p>
+                </div>
+              </td>
+              <td>
+                <div class="task">
+                  <p class="content__day">2</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">3</p>
+                </div>
+              </td>
+              <td class="table__weekend">
+                <div class="task">
+                  <p class="content__day">4</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      <div class="calendar__modal calendar__modal--inactive">
+        <div class="modal__header">
+          <div>
+            <a href="#" id="add__category">
+              <i class="fas fa-plus"></i>
+              Category
+            </a>
+            <p class="category"></p>
+          </div>
+          <ul class="category__list inactive">
+            <li>abc</li>
+            <li>def</li>
+            <li>ghi</li>
+          </ul>
+          <p>12.14.2018</p>
+        </div>
+        <div class="modal__content">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <h3>Title of the task</h3>
+            <p>Description</p>
+          </div>
+        </div>
+        <a class="modal__button" href="#">Add task</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./script/modal.js"></script>
+  <script type="text/javascript" src="./script/toogleWeekMonth.js"></script>
+  <script type="text/javascript" src="./script/drag_drop.js"></script>
+</body>
+</html>
